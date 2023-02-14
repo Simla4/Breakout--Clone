@@ -14,20 +14,40 @@ public class BallMovement : MonoBehaviour
 
     #region Calllbacks
 
+    private void OnEnable()
+    {
+        EventManager.OnBallCollisionPaddle += ApplyForce;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.OnBallCollisionPaddle -= ApplyForce;
+    }
+
     private void Start()
     {
-        ApplyForce();
+        ApplyFirstForce();
     }
 
     #endregion
 
     #region OtherMethods
 
-    private void ApplyForce()
+    private void ApplyFirstForce()
     {
         var force = Vector2.down;
         
         rb.AddForce(force * ballSpeed);
+    }
+
+    private void ApplyForce(float paddlePos)
+    {
+        var ballPos = transform.position;
+        var distance = ballPos.x - paddlePos;
+        var newSpeed = ballSpeed / Mathf.Abs(distance);
+        
+        rb.velocity = Vector2.zero;
+        rb.AddForce(new Vector2(distance * newSpeed, ballSpeed));
     }
     
     #endregion
