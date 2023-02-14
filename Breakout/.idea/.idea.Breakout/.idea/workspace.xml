@@ -9,6 +9,10 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Ball/Ball.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Blocks/Block.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interfaces/IDespawn.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Paddle/PaddleMovement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Patterns/Pool.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -70,7 +74,7 @@
       <workItem from="1675372840626" duration="2100000" />
       <workItem from="1675422719423" duration="4495000" />
       <workItem from="1676295954219" duration="598000" />
-      <workItem from="1676361027752" duration="5394000" />
+      <workItem from="1676361027752" duration="7224000" />
     </task>
     <servers />
   </component>

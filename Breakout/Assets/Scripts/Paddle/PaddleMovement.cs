@@ -7,7 +7,6 @@ public class PaddleMovement : MonoBehaviour
 {
     #region Variables
 
-    [SerializeField] private float speed = 10;
     [SerializeField] private float sideLimits = 11;
 
     #endregion
