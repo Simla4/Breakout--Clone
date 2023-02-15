@@ -45,9 +45,16 @@ public class BallMovement : MonoBehaviour
         var ballPos = transform.position;
         var distance = ballPos.x - paddlePos;
         var newSpeed = ballSpeed / Mathf.Abs(distance);
-        
         rb.velocity = Vector2.zero;
-        rb.AddForce(new Vector2(distance * newSpeed, ballSpeed));
+
+        if (distance < -0.2f || distance > 0.2f)
+        {
+            rb.AddForce(new Vector2(distance * newSpeed, ballSpeed));
+        }
+        else
+        {
+            rb.AddForce(Vector2.up * ballSpeed);
+        }
     }
     
     #endregion
