@@ -8,4 +8,5 @@ public static class EventManager
     public static Action<float> OnBallCollisionPaddle;
     public static Action OnBallCollisionBlock;
     public static Action OnBallCollisionBorder;
+    public static Action OnGameOver;
 }

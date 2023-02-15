@@ -17,7 +17,7 @@ public class BallCollision : MonoBehaviour
         {
             EventManager.OnBallCollisionBlock?.Invoke();
         }
-        else
+        else if(col.gameObject.CompareTag("Border"))
         {
             EventManager.OnBallCollisionBorder?.Invoke();
         }

@@ -21,11 +21,13 @@ public class GameManager : MonoBehaviour
     private void OnEnable()
     {
         EventManager.OnBallCollisionBlock += CalculateScore;
+        EventManager.OnBallCollisionBorder += CalculateHealth;
     }
 
     private void OnDisable()
     {
         EventManager.OnBallCollisionBlock -= CalculateScore;
+        EventManager.OnBallCollisionBorder -= CalculateHealth;
     }
 
     #endregion
@@ -43,9 +45,16 @@ public class GameManager : MonoBehaviour
         Debug.Log("Score: " + score);
     }
 
-    private void Health()
+    private void CalculateHealth()
     {
+        health--;
         
+        if (health <= 0)
+        {
+            EventManager.OnGameOver?.Invoke();
+            
+            Debug.Log("Game Over");    
+        }
     }
 
     #endregion
