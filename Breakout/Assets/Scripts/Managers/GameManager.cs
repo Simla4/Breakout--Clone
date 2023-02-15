@@ -36,11 +36,11 @@ public class GameManager : MonoBehaviour
 
     private void CalculateScore()
     {
-        var score = PlayerPrefs.GetInt("Score", 0);
+        var score = PlayerPrefs.GetInt("Score");
 
         score += 10;
 
-        PlayerPrefs.SetInt("Score", 0);
+        PlayerPrefs.SetInt("Score", score);
         
         Debug.Log("Score: " + score);
     }
@@ -52,6 +52,7 @@ public class GameManager : MonoBehaviour
         if (health <= 0)
         {
             EventManager.OnGameOver?.Invoke();
+            PlayerPrefs.SetInt("Score", 0);
             
             Debug.Log("Game Over");    
         }

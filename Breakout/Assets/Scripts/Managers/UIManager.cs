@@ -22,20 +22,28 @@ public class UIManager : MonoBehaviour
     private void OnEnable()
     {
         EventManager.OnBallCollisionBlock += ChangeScoreTxt;
+        EventManager.OnGameOver += ShowFailUI;
     }
 
     private void OnDisable()
     {
         EventManager.OnBallCollisionBlock -= ChangeScoreTxt;
+        EventManager.OnGameOver -= ShowFailUI;
     }
 
     #endregion
 
     #region OtherMethods
 
+    private void ShowFailUI()
+    {
+        inGameUI.SetActive(false);
+        failUI.SetActive(true);
+    }
+
     private void ChangeScoreTxt()
     {
-        scoreTxt.text = PlayerPrefs.GetInt("Score", 0).ToString();
+        scoreTxt.text = PlayerPrefs.GetInt("Score").ToString();
     }
 
     #endregion
