@@ -18,6 +18,7 @@ public class LevelManager : MonoBehaviour
         blockPool = PoolManager.Instance.blockPool;
 
         blockPool.Spawn();
+        blockPool.Spawn();
     }
 
     #endregion
