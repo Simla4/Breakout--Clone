@@ -13,10 +13,6 @@ public class BallCollision : MonoBehaviour
             
             EventManager.OnBallCollisionPaddle?.Invoke(paddlePos.x);
         }
-        else if(col.gameObject.CompareTag("Block"))
-        {
-            EventManager.OnBallCollisionBlock?.Invoke();
-        }
         else if(col.gameObject.CompareTag("Border"))
         {
             EventManager.OnBallCollisionBorder?.Invoke();

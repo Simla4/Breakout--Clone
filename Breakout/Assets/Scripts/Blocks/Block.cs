@@ -15,32 +15,16 @@ public class Block : MonoBehaviour, ISpawn, IDespawn
 
     #endregion
 
-    #region
+    #region Callbacks
 
     private void Start()
     {
         blockPool = PoolManager.Instance.blockPool;
     }
 
-    private void OnEnable()
-    {
-        EventManager.OnBallCollisionBlock += RemoveBlock;
-    }
-
-    private void OnDisable()
-    {
-        EventManager.OnBallCollisionBlock -= RemoveBlock;
-    }
-
     #endregion
 
     #region OtherMethods
-
-    private void RemoveBlock()
-    {
-        blockPool.ReturnToPool(this);
-    }
-
     public void OnSpawn()
     {
         gameObject.SetActive(true);

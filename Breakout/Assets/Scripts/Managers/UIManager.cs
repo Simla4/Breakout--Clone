@@ -21,13 +21,13 @@ public class UIManager : MonoBehaviour
 
     private void OnEnable()
     {
-        EventManager.OnBallCollisionBlock += ChangeScoreTxt;
+        EventManager.OnBlockCollisionBall += ChangeScoreTxt;
         EventManager.OnGameOver += ShowFailUI;
     }
 
     private void OnDisable()
     {
-        EventManager.OnBallCollisionBlock -= ChangeScoreTxt;
+        EventManager.OnBlockCollisionBall -= ChangeScoreTxt;
         EventManager.OnGameOver -= ShowFailUI;
     }
 

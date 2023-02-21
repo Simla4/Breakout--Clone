@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-    #region Variables
+    #region OtherMethods
 
-    [SerializeField] private float speed;
+    
 
     #endregion
 }

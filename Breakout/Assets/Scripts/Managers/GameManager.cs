@@ -15,18 +15,18 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        PlayerPrefs.GetInt("Score", 0);
+        PlayerPrefs.SetInt("Score", 0);
     }
 
     private void OnEnable()
     {
-        EventManager.OnBallCollisionBlock += CalculateScore;
+        EventManager.OnBlockCollisionBall += CalculateScore;
         EventManager.OnBallCollisionBorder += CalculateHealth;
     }
 
     private void OnDisable()
     {
-        EventManager.OnBallCollisionBlock -= CalculateScore;
+        EventManager.OnBlockCollisionBall -= CalculateScore;
         EventManager.OnBallCollisionBorder -= CalculateHealth;
     }
 
