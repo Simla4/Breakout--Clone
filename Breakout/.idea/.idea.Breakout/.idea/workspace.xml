@@ -8,9 +8,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$USER_HOME$/AppData/Local/Temp/BallCollision.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Temp/CollisionDetector.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Temp/Temp2_pixelshot_demo2.zip/pixelshot_demo2/Assets/Scripts/Obstacles/CollisionDetector.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/Downloads/pixelshot_demo2/pixelshot_demo2/Assets/Scripts/Manager/LevelManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Ball/Ball.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Blocks/Block.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Blocks/BlockCollision.cs" root0="FORCE_HIGHLIGHTING" />
@@ -83,7 +81,8 @@
       <workItem from="1676549687162" duration="1847000" />
       <workItem from="1676628076986" duration="684000" />
       <workItem from="1676902891926" duration="1189000" />
-      <workItem from="1677003994279" duration="2540000" />
+      <workItem from="1677003994279" duration="3142000" />
+      <workItem from="1677050563110" duration="4778000" />
     </task>
     <servers />
   </component>
