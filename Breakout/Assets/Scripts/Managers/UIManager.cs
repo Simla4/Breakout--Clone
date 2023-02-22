@@ -11,7 +11,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject startUI;
     [SerializeField] private GameObject inGameUI;
     [SerializeField] private GameObject failUI;
-    [SerializeField] private GameObject winUI;
 
     [SerializeField] private TextMeshProUGUI scoreTxt;
 
@@ -34,6 +33,18 @@ public class UIManager : MonoBehaviour
     #endregion
 
     #region OtherMethods
+
+    public void ShowStartUI()
+    {
+        failUI.SetActive(false);
+        startUI.SetActive(true);
+    }
+
+    public void ShowInGameUI()
+    {
+        startUI.SetActive(false);
+        inGameUI.SetActive(true);
+    }
 
     private void ShowFailUI()
     {
