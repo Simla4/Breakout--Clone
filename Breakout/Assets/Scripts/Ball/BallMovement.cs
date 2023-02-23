@@ -17,11 +17,15 @@ public class BallMovement : MonoBehaviour
     private void OnEnable()
     {
         EventManager.OnBallCollisionPaddle += ApplyForce;
+        EventManager.OnBallCollisionBorder += ApplyFirstForce;
+        EventManager.OnGameStart += ApplyFirstForce;
     }
 
     private void OnDisable()
     {
         EventManager.OnBallCollisionPaddle -= ApplyForce;
+        EventManager.OnBallCollisionBorder -= ApplyFirstForce;
+        EventManager.OnGameStart -= ApplyFirstForce;
     }
 
     private void Start()
