@@ -9,4 +9,6 @@ public static class EventManager
     public static Action OnBlockCollisionBall;
     public static Action OnBallCollisionBorder;
     public static Action OnGameOver;
+    public static Action OnGameStart;
+    public static Action OnGameWin;
 }

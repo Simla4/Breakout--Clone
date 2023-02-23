@@ -9,6 +9,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$USER_HOME$/Downloads/pixelshot_demo2/pixelshot_demo2/Assets/Scripts/Manager/LevelManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/Downloads/pixelshot_demo2/pixelshot_demo2/Assets/Scripts/Patterens/ObjectPool.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Ball/Ball.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Blocks/Block.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Blocks/BlockCollision.cs" root0="FORCE_HIGHLIGHTING" />
@@ -82,7 +83,10 @@
       <workItem from="1676628076986" duration="684000" />
       <workItem from="1676902891926" duration="1189000" />
       <workItem from="1677003994279" duration="3142000" />
-      <workItem from="1677050563110" duration="8049000" />
+      <workItem from="1677050563110" duration="8806000" />
+      <workItem from="1677100292789" duration="1107000" />
+      <workItem from="1677142195569" duration="786000" />
+      <workItem from="1677145558483" duration="1747000" />
     </task>
     <servers />
   </component>

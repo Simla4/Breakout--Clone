@@ -19,8 +19,20 @@ public class LevelManager : MonoBehaviour
     private void Start()
     {
         blockPool = PoolManager.Instance.blockPool;
+    }
 
-        CreateLevel();
+    private void OnEnable()
+    {
+        EventManager.OnGameStart += CreateLevel;
+        EventManager.OnGameOver += DestroyLevel;
+        EventManager.OnBlockCollisionBall += CheckLevel;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.OnGameStart -= CreateLevel;
+        EventManager.OnGameOver -= DestroyLevel;
+        EventManager.OnBlockCollisionBall -= CheckLevel;
     }
 
     #endregion
@@ -39,8 +51,6 @@ public class LevelManager : MonoBehaviour
 
             firstPos.x += distance.x;
 
-            //firstPos = new Vector2(firstPos.x, firstPos.y);
-            
             Debug.Log("first Pos: " + firstPos);
 
             if (block.transform.position.x >= 7)
@@ -49,6 +59,19 @@ public class LevelManager : MonoBehaviour
             }
             
         }
+    }
+
+    private void CheckLevel()
+    {
+        if (blockPool.IsListEmpty() == true)
+        {
+            EventManager.OnGameWin?.Invoke();
+        }
+    }
+
+    private void DestroyLevel()
+    {
+        blockPool.ReturnAll();
     }
 
     #endregion

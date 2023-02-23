@@ -65,9 +65,20 @@ public class Pool<T> : PoolBase where T : Component
         {
             iDeSpawn.OnDespawn();
         }
-
+        
         
         obj.gameObject.SetActive(false);
+    }
+
+    public void ReturnAll()
+    {
+        while (active.Count > 0)
+        {
+            var item = active[0];
+            ReturnToPool(item);
+        }
+        
+        Debug.Log("ReturnedAll");
     }
 
 }

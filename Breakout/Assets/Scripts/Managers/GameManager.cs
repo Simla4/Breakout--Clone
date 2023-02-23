@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     #region Variables
 
     [SerializeField] private int health = 3;
+    private int firstHealth;
+    [SerializeField] private GameObject inGame;
 
     #endregion
 
@@ -16,23 +18,40 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         PlayerPrefs.SetInt("Score", 0);
+        firstHealth = health;
     }
 
     private void OnEnable()
     {
         EventManager.OnBlockCollisionBall += CalculateScore;
         EventManager.OnBallCollisionBorder += CalculateHealth;
+        EventManager.OnGameWin += GameOver;
     }
 
     private void OnDisable()
     {
         EventManager.OnBlockCollisionBall -= CalculateScore;
         EventManager.OnBallCollisionBorder -= CalculateHealth;
+        EventManager.OnGameWin -= GameOver;
     }
 
     #endregion
 
     #region OtherMethods
+    
+    public void StartGame()
+    {
+        inGame.SetActive(true);
+        Time.timeScale = 1;
+        EventManager.OnGameStart?.Invoke();
+    }
+    
+    private void GameOver()
+    {
+        Time.timeScale = 0;
+        inGame.SetActive(false);
+        health = firstHealth;
+    }
 
     private void CalculateScore()
     {
@@ -54,7 +73,7 @@ public class GameManager : MonoBehaviour
             EventManager.OnGameOver?.Invoke();
             PlayerPrefs.SetInt("Score", 0);
             
-            Debug.Log("Game Over");    
+            GameOver();  
         }
     }
 
