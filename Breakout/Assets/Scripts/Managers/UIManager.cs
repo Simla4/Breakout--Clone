@@ -40,7 +40,7 @@ public class UIManager : MonoBehaviour
     public void ShowStartUI()
     {
         failUI.SetActive(false);
-        winUI.SetActive(true);
+        winUI.SetActive(false);
         startUI.SetActive(true);
     }
 
