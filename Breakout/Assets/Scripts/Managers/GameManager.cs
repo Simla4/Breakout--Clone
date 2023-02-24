@@ -17,20 +17,17 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        PlayerPrefs.SetInt("Score", 0);
         firstHealth = health;
     }
 
     private void OnEnable()
     {
-        EventManager.OnBlockCollisionBall += CalculateScore;
         EventManager.OnBallCollisionBorder += CalculateHealth;
         EventManager.OnGameWin += GameOver;
     }
 
     private void OnDisable()
     {
-        EventManager.OnBlockCollisionBall -= CalculateScore;
         EventManager.OnBallCollisionBorder -= CalculateHealth;
         EventManager.OnGameWin -= GameOver;
     }
@@ -53,16 +50,7 @@ public class GameManager : MonoBehaviour
         health = firstHealth;
     }
 
-    private void CalculateScore()
-    {
-        var score = PlayerPrefs.GetInt("Score");
-
-        score += 10;
-
-        PlayerPrefs.SetInt("Score", score);
-        
-        Debug.Log("Score: " + score);
-    }
+    
 
     private void CalculateHealth()
     {

@@ -14,6 +14,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject winUI;
 
     [SerializeField] private TextMeshProUGUI scoreTxt;
+    [SerializeField] private TextMeshProUGUI firstScoreTxt;
+    [SerializeField] private TextMeshProUGUI secondScoreTxt;
+    [SerializeField] private TextMeshProUGUI thirtScoreTxt;
 
     #endregion
 
@@ -23,14 +26,16 @@ public class UIManager : MonoBehaviour
     {
         EventManager.OnBlockCollisionBall += ChangeScoreTxt;
         EventManager.OnGameOver += ShowFailUI;
-        EventManager.OnGameWin += ShowWinUI;
+        EventManager.OnGameOver += ChangeHighScore;
+        EventManager.OnGameOver += ShowWinUI;
     }
 
     private void OnDisable()
     {
         EventManager.OnBlockCollisionBall -= ChangeScoreTxt;
         EventManager.OnGameOver -= ShowFailUI;
-        EventManager.OnGameWin -= ShowWinUI;
+        EventManager.OnGameOver -= ChangeHighScore;
+        EventManager.OnGameOver -= ShowWinUI;
     }
 
     #endregion
@@ -39,6 +44,7 @@ public class UIManager : MonoBehaviour
 
     public void ShowStartUI()
     {
+        scoreTxt.text = "0";
         failUI.SetActive(false);
         winUI.SetActive(false);
         startUI.SetActive(true);
@@ -65,6 +71,14 @@ public class UIManager : MonoBehaviour
     private void ChangeScoreTxt()
     {
         scoreTxt.text = PlayerPrefs.GetInt("Score").ToString();
+    }
+
+    private void ChangeHighScore()
+    {
+        var highScores = ScoreManager.Instance.highScores;
+        firstScoreTxt.text = highScores[0].ToString();
+        secondScoreTxt.text = highScores[1].ToString();
+        thirtScoreTxt.text = highScores[2].ToString();
     }
 
     #endregion

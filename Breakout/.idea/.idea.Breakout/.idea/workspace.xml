@@ -14,6 +14,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Blocks/Block.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Blocks/BlockCollision.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interfaces/IDespawn.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/ScoreManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Paddle/PaddleMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Patterns/Pool.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -86,7 +87,8 @@
       <workItem from="1677050563110" duration="8806000" />
       <workItem from="1677100292789" duration="1107000" />
       <workItem from="1677142195569" duration="786000" />
-      <workItem from="1677145558483" duration="2105000" />
+      <workItem from="1677145558483" duration="7215000" />
+      <workItem from="1677243234808" duration="1790000" />
     </task>
     <servers />
   </component>
