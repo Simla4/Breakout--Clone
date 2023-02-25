@@ -27,7 +27,7 @@ public class UIManager : MonoBehaviour
         EventManager.OnBlockCollisionBall += ChangeScoreTxt;
         EventManager.OnGameOver += ShowFailUI;
         EventManager.OnGameOver += ChangeHighScore;
-        EventManager.OnGameOver += ShowWinUI;
+        EventManager.OnGameWin += ShowWinUI;
     }
 
     private void OnDisable()
@@ -35,7 +35,7 @@ public class UIManager : MonoBehaviour
         EventManager.OnBlockCollisionBall -= ChangeScoreTxt;
         EventManager.OnGameOver -= ShowFailUI;
         EventManager.OnGameOver -= ChangeHighScore;
-        EventManager.OnGameOver -= ShowWinUI;
+        EventManager.OnGameWin -= ShowWinUI;
     }
 
     #endregion
